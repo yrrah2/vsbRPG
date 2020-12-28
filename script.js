@@ -22,8 +22,8 @@ const newHero = () => {
 
 const selectHero = (hero) => {
 	if (selectedHero != 0) {
-		$("#hero_"+hero.name).css("border", "1px solid black");
-		$("#hero_"+hero.name+" > .heroName").css("font-weight", "normal");
+		$("#hero_"+selectedHero.name).css("border", "1px solid black");
+		$("#hero_"+selectedHero.name+" > .heroName").css("font-weight", "normal");
 	}
 	selectedHero = hero;
 	$("#hero_"+hero.name).css("border", "3px solid black");
