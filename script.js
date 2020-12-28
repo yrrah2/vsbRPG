@@ -18,6 +18,9 @@ class Hero {
 
 const newHero = () => {
 	name = window.prompt('Hero name: \n\n\n');
+	while (name == ''){
+		name = window.prompt('! Name must not be blank ! \n\n Hero name: \n\n\n');
+	}
 	heroesList = heroesList.concat(new Hero(name));
 	showHeroes();
 }
