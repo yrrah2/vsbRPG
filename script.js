@@ -47,6 +47,7 @@ const showHeroes = () => {
 		let hero = heroesList[i];
 		$("#hero_"+hero.name).click(() => {selectHero(hero)});
 	}
+	selectHero(selectedHero);
 }
 
 const heroPanel = (hero) => {
