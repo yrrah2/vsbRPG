@@ -35,7 +35,7 @@ const showHeroes = () => {
 	html += "<div class='heroPanel' id='newHero'><p class='heroName'>+</p></div>";
 	
 	$("#heroes").html(html)
-	// $("#newHero").click(newHero());
+	/$("#newHero").click(() => {newHero()});
 	
 	for (let i = 0; i < heroesList.length; i++) {	
 		let hero = heroesList[i];
