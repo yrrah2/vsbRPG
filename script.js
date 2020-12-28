@@ -42,8 +42,8 @@ const showHeroes = () => {
 	
 	for (let i = 0; i < heroesList.length; i++) {	
 		let hero = heroesList[i];
-		if (hero.name == "newHero"){
-			$(".hero_"+hero.name).click(newHero());
+		if (hero.name == "+"){
+			$(".hero_+").click(newHero());
 		} else {
 			$(".hero_"+hero.name).click(selectHero(hero));
 		}
