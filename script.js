@@ -21,6 +21,11 @@ const newHero = () => {
 }
 
 const selectHero = (hero) => {
+	if (selectedHero){
+		$("#hero_"+hero.name).css("border", "1px solid black");
+		$("#hero_"+hero.name+" > .heroName").css("font-weight", "normal");
+	}
+	selectedHero = hero;
 	$("#hero_"+hero.name).css("border", "3px solid black");
 	$("#hero_"+hero.name+" > .heroName").css("font-weight", "bold");
 }
@@ -59,6 +64,7 @@ const heroPanel = (hero) => {
 
 const pageload = () => {
 	heroesList = [];
+	selectedHero = 0;
 	showHeroes();
 }
 
