@@ -32,7 +32,7 @@ const heroPanel = (hero) => {
 	html = '';
 	
 	html += "<div "
-	html += "style='width: 100px; height: 200px'"
+	html += "class='heroPanel'"
 	
 	if (hero == "newHero"){
 		html += "onclick='newHero(\"John\")'";
