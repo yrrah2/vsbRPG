@@ -21,7 +21,8 @@ const newHero = () => {
 }
 
 const selectHero = (hero) => {
-	$("#hero_"+hero.name).css("border", "3px");
+	$("#hero_"+hero.name).css("border", "3px solid black");
+	$("#hero_"+hero.name+" > .heroName").css("font-weight", "bold");
 }
 
 const showHeroes = () => {
