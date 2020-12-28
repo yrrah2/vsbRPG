@@ -39,7 +39,7 @@ const showHeroes = () => {
 	
 	for (let i = 0; i < heroesList.length; i++) {	
 		let hero = heroesList[i];
-		$(".hero_"+hero.name).click(selectHero(hero));
+		$("#hero_"+hero.name).click(() => {selectHero(hero)});
 	}
 }
 
