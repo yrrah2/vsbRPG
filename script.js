@@ -50,7 +50,7 @@ const heroPanel = (hero) => {
 
 const pageload = () => {
 	heroesList = [];
-	
+	showHeroes(heroesList);
 }
 
 window.onload = pageload;
