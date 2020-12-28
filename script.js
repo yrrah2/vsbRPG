@@ -11,7 +11,7 @@ class Hero {
 }
 
 const newHero = (name) => {
-	heroesList = heroesList.concat(Hero(name));
+	heroesList = heroesList.concat(new Hero(name));
 }
 
 const showHeroes = (heroesList) => {
