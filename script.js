@@ -1,13 +1,13 @@
 class Hero {
-  constructor(name) {
-    this.name = name;
-    this.skill = {
-		"mining": 0,
-		"cultivation": 0,
-		"husbandry": 0,
-		"study": 0
-    }
-  }
+	constructor(name) {
+		this.name = name;
+		this.skill = {
+			"mining": 0,
+			"cultivation": 0,
+			"husbandry": 0,
+			"study": 0
+		}
+	}
 }
 
 const newHero = (name) => {
