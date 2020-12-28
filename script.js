@@ -2,7 +2,7 @@ class Hero {
 	constructor(name) {
 		if (name == "newHero"){
 			this.name = "+";
-			this.link = "onclick='newHero(\"John\")'";
+			this.link = "onclick='newHero()'";
 		} else {
 			this.name = name;
 			this.link = "onclick=''";
@@ -16,7 +16,8 @@ class Hero {
 	}
 }
 
-const newHero = (name) => {
+const newHero = () => {
+	name = window.prompt('Hero name: \n\n\n');
 	heroesList = heroesList.concat(new Hero(name));
 }
 
