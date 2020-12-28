@@ -6,3 +6,9 @@
 	text-align: center;
 	cursor: pointer;
 }
+
+.heroName {
+	margin: 0;
+	position: relative;
+	top: 50%;
+}
