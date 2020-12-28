@@ -35,7 +35,7 @@ const heroPanel = (hero) => {
 	html += "style='width: 100px; height: 200px'"
 	
 	if (hero == "newHero"){
-		html += "onclick='newHero(\'John\')'";
+		html += "onclick='newHero(\"John\")'";
 		html += ">";
 		html += '+';
 	} else {
