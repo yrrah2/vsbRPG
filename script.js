@@ -50,8 +50,9 @@ const showHeroes = () => {
 const heroPanel = (hero) => {
 	html = '';
 	
-	html += "<div "
-	html += "class='heroPanel hero_" + hero.name + "'"
+	html += "<div ";
+	html += "class='heroPanel'";
+	html += "id='hero_" + hero.name + "'";
 	html += "><p class='heroName'>";
 	html += hero.name;
 	html += "</p></div>";
