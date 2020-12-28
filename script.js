@@ -2,10 +2,8 @@ class Hero {
 	constructor(name) {
 		if (name == "newHero"){
 			this.name = "+";
-			this.link = "onclick='newHero()'";
 		} else {
 			this.name = name;
-			this.link = "onclick='selectHero(\'" + self + "\')'";
 			this.skill = {
 				"mining": 0,
 				"cultivation": 0,
@@ -41,15 +39,22 @@ const showHeroes = () => {
 	html += heroPanel(new Hero("newHero"));
 	
 	$("#heroes").html(html)
+	
+	for (let i = 0; i < heroesList.length; i++) {	
+		let hero = heroesList[i];
+		if (hero.name == "newHero"){
+			$(".hero_"+hero.name).click(newHero());
+		} else {
+			$(".hero_"+hero.name).click(selectHero(hero));
+		}
+	}
 }
 
 const heroPanel = (hero) => {
-	
 	html = '';
 	
 	html += "<div "
 	html += "class='heroPanel hero_" + hero.name + "'"
-	html += hero.link;
 	html += "><p class='heroName'>";
 	html += hero.name;
 	html += "</p></div>";
