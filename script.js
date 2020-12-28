@@ -5,8 +5,13 @@ class Hero {
 		"mining": 0,
 		"cultivation": 0,
 		"husbandry": 0,
-		"study": 0};
+		"study": 0
+    }
   }
+}
+
+const newHero = (name) => {
+	heroesList = heroesList.concat(Hero(name));
 }
 
 const showHeroes = (heroesList) => {
@@ -14,28 +19,37 @@ const showHeroes = (heroesList) => {
 	
 	for (let i = 0; i < heroesList.length; i++) {	
 		let hero = heroesList[i];
-		console.log(heroPanel(hero));
+		html += heroPanel(hero);
 	}
 	
-	html += "<span style='width: 100px'>";
-	html += '+';
-	html += "</span>";
+	html += heroPanel("newHero");
 	
 	$("#heroes").html(html)
 }
 
 const heroPanel = (hero) => {
+	
 	html = '';
 	
-	html += "<span style='width: 100px'>";
-	html += hero.name;
-	html += "</span>";
+	html += "<div "
+	html += "style='width: 100px; height: 200px'"
+	
+	if (hero == "newHero"){
+		html += "onclick='newHero('John')'";
+		html += ">";
+		html += '+';
+	} else {
+		html += "onclick=''";
+		html += ">";
+		html += hero.name;
+	};
+	html += "</div>";
 	
 	return html
 }
 
 const pageload = () => {
-	var heroesList = [];
+	heroesList = [];
 	
 }
 
