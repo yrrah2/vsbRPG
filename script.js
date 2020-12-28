@@ -5,13 +5,14 @@ class Hero {
 			this.link = "onclick='newHero()'";
 		} else {
 			this.name = name;
-			this.link = "onclick=''";
+			this.link = "onclick='selectHero(\'" + self + "\')'";
 			this.skill = {
 				"mining": 0,
 				"cultivation": 0,
 				"husbandry": 0,
 				"study": 0
-			}
+			};
+			this.task = '';
 		}
 	}
 }
@@ -23,6 +24,10 @@ const newHero = () => {
 	}
 	heroesList = heroesList.concat(new Hero(name));
 	showHeroes();
+}
+
+const selectHero = (hero) => {
+	$(".hero_"+hero.name).css("border", "3px");
 }
 
 const showHeroes = () => {
@@ -43,7 +48,7 @@ const heroPanel = (hero) => {
 	html = '';
 	
 	html += "<div "
-	html += "class='heroPanel'"
+	html += "class='heroPanel hero_" + hero.name + "'"
 	html += hero.link;
 	html += "><p class='heroName'>";
 	html += hero.name;
