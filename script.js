@@ -1,17 +1,13 @@
 class Hero {
 	constructor(name) {
-		if (name == "newHero"){
-			this.name = "+";
-		} else {
-			this.name = name;
-			this.skill = {
-				"mining": 0,
-				"cultivation": 0,
-				"husbandry": 0,
-				"study": 0
-			};
-			this.task = '';
-		}
+		this.name = name;
+		this.skill = {
+			"mining": 0,
+			"cultivation": 0,
+			"husbandry": 0,
+			"study": 0
+		};
+		this.task = '';
 	}
 }
 
@@ -36,10 +32,10 @@ const showHeroes = () => {
 		html += heroPanel(hero);
 	}
 	
-	html += heroPanel(new Hero("newHero"));
+	html += "<div class='heroPanel' id='newHero'><p class='heroName'>+</p></div>";
 	
 	$("#heroes").html(html)
-	// $(".hero_+").click(newHero());
+	$("#newHero").click(newHero());
 	
 	for (let i = 0; i < heroesList.length; i++) {	
 		let hero = heroesList[i];
