@@ -1,7 +1,7 @@
 class Hero {
 	constructor(name) {
 		this.name = name;
-		this.skill = {
+		this.skills = {
 			"mining": 0,
 			"cultivation": 0,
 			"husbandry": 0,
@@ -28,6 +28,10 @@ const selectHero = (hero) => {
 	selectedHero = hero;
 	$("#hero_"+hero.name).css("border", "3px solid black");
 	$("#hero_"+hero.name+" > .heroName").css("font-weight", "bold");
+	
+	for (skill in hero.skills){
+		$("#"+skill).text(hero.skills[skill]);
+	}
 }
 
 const showHeroes = () => {
@@ -51,6 +55,9 @@ const showHeroes = () => {
 }
 
 const heroPanel = (hero) => {
+	/// This function constructs a reusable
+	/// panel to display the available heroes.
+	
 	html = '';
 	
 	html += "<div ";
