@@ -1,11 +1,17 @@
 class Hero {
 	constructor(name) {
-		this.name = name;
-		this.skill = {
-			"mining": 0,
-			"cultivation": 0,
-			"husbandry": 0,
-			"study": 0
+		if (name == "newHero"){
+			this.name = "+";
+			this.link = "onclick='newHero(\"John\")'";
+		} else {
+			this.name = name;
+			this.link = "onclick=''";
+			this.skill = {
+				"mining": 0,
+				"cultivation": 0,
+				"husbandry": 0,
+				"study": 0
+			}
 		}
 	}
 }
@@ -22,7 +28,7 @@ const showHeroes = (heroesList) => {
 		html += heroPanel(hero);
 	}
 	
-	html += heroPanel("newHero");
+	html += heroPanel(new Hero("newHero"));
 	
 	$("#heroes").html(html)
 }
@@ -33,17 +39,10 @@ const heroPanel = (hero) => {
 	
 	html += "<div "
 	html += "class='heroPanel'"
-	
-	if (hero == "newHero"){
-		html += "onclick='newHero(\"John\")'";
-		html += ">";
-		html += '+';
-	} else {
-		html += "onclick=''";
-		html += ">";
-		html += hero.name;
-	};
-	html += "</div>";
+	html += hero.link;
+	html += "><p class='heroName'>";
+	html += hero.name;
+	html += "</p></div>";
 	
 	return html
 }
