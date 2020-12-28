@@ -19,9 +19,10 @@ class Hero {
 const newHero = () => {
 	name = window.prompt('Hero name: \n\n\n');
 	heroesList = heroesList.concat(new Hero(name));
+	showHeroes();
 }
 
-const showHeroes = (heroesList) => {
+const showHeroes = () => {
 	html = '';
 	
 	for (let i = 0; i < heroesList.length; i++) {	
@@ -50,7 +51,7 @@ const heroPanel = (hero) => {
 
 const pageload = () => {
 	heroesList = [];
-	showHeroes(heroesList);
+	showHeroes();
 }
 
 window.onload = pageload;
