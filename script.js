@@ -29,9 +29,6 @@ const selectHero = (hero) => {
 	$("#hero_"+hero.name).css("border", "3px solid black");
 	$("#hero_"+hero.name+" > .heroName").css("font-weight", "bold");
 	
-	for (skill in hero.skills){
-		$("#"+skill).text(hero.skills[skill]);
-	}
 }
 
 const showHeroes = () => {
@@ -70,10 +67,44 @@ const heroPanel = (hero) => {
 	return html
 }
 
+const setTask = (task) => {
+	selectedHero.task = task;
+}
+
+const tick = () => {
+	counter ++;
+	for (let i = 0; i < heroesList.length; i++) {
+		let task = heroesList[i].task;
+		if ( task == "mining" ) {
+			resources["ores"] += 1;
+		} else if ( task == "cultivation" ) {
+			resources["wood"] += 1;
+		} else if ( task == "husbandry" ) {
+			resources["hides"] += 1;
+		} else if ( task == "study" ) {
+			resources["ideas"] += 1;
+		}
+	}
+	for (resource in resources) {
+		$("#"+resource).text(resources[resource]);
+	}
+	for (skill in selectedHero.skills) {
+		$("#"+skill).text(selectedHero.skills[skill]);
+	}
+}
+
 const pageload = () => {
 	heroesList = [];
 	selectedHero = 0;
+	resources = {"ores":0, "wood":0, "hides":0, "ideas":0}
+
+
 	showHeroes();
+
+	counter = 0;
+
+	setInterval(tick, 250); // 250 milliseconds = 4 frames per sec
+
 }
 
 window.onload = pageload;

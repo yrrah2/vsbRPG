@@ -10,13 +10,62 @@
 <body>
 
 <div id="heroes"></div>
+
+<div class="center" id="tab_block">
+			<span>
+				<span class="tab" id="tab_1" onclick="table_1()">hiragana</span>
+				<span class="tab" id="tab_2" onclick="table_2()">katakana</span>
+			</span>
+		</div>
+
+		<table id="table_1" class="center">
+		  <tr>
+		    <th>あ</th>
+		    <th>か</th>
+		    <th>が</th>
+		    <th>さ</th>
+		    <th>ざ</th>
+		  </tr>
+		  <tr>
+		    <td>い</td>
+		    <td>き</td>
+		    <td>ぎ</td>
+		    <td>し</td>
+		    <td>じ</td>
+		    <td></td>
+		  </tr>
+		</table>
+
+		<table id="table_2" style="display: none" class="center">
+		  <tr>
+		    <th>ア</th>
+		    <th>カ</th>
+		    <th>ガ</th>
+		    <th>サ</th>
+		    <th>ザ</th>
+		  </tr>
+		  <tr>
+		    <td>イ</td>
+		    <td>キ</td>
+		    <td>ギ</td>
+		    <td>シ</td>
+		    <td>ジ</td>
+		  </tr>
+		</table>
+
+
 <div id="tasks">
-	<span id="mining"></span>
-	<span id="cultivation"></span>
-	<span id="husbandry"></span>
-	<span id="study"></span>
+	<button id="mining_task" onclick="setTask('mining')">mining <p id="mining"></p></button>
+	<button id="cultivation_task" onclick="setTask('cultivation')">cultivation <p id="cultivation"></p></button>
+	<button id="husbandry_task" onclick="setTask('husbandry')">husbandry<p id="husbandry"></p></button>
+	<button id="study_task" onclick="setTask('study')">study <p id="study"></p></button>
 </div>
-<div id="resources"></div>
+<div id="resources">
+	<span id="ores"></span>
+	<span id="wood"></span>
+	<span id="hides"></span>
+	<span id="ideas"></span>
+</div>
 	
 </body>
 </html>
